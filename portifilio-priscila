@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portfólio - Priscila Batista</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+<nav>
+
+<a href="#sobre">Sobre Mim</a>
+
+<a href="#formacao">Formação</a>
+
+<a href="#portfolio">Portfólio</a>
+
+<a href="#contato">Contato</a>
+
+</nav>
+
+</header>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
+<section id="sobre">
+
+    <h1>Sobre Mim</h1>
+
+    <p>
+        Meu nome é Priscila Batista, tenho 33 anos e moro em São Paulo. 
+        Sou estudante de Engenharia de Software e apaixonada por tecnologia.
+    </p>
+
+    <p>
+        Tenho conhecimentos em HTML, CSS e JavaScript, e atualmente estou focada em 
+        construir meus primeiros projetos de portfólio.
+    </p>
+
+    <p>
+        No meu tempo livre, gosto de ler livros de ficção, praticar corrida e 
+        jogar videogame com os amigos.
+
+    </p>
+
+</section>
+<section id="formacao">
+
+    <h1>Formação</h1>
+
+    <ul>
+        <!-- Ensino Médio -->
+        <li>
+            <strong>Ensino Médio Completo</strong> – Escola Estadual Professor José de Alencar (Concluído em 2018)
+        </li>
+
+        <!-- Graduação -->
+        <li>
+            <strong>Graduação em  Engeharia de Software</strong> – Faculdade de Tecnologia Integrada (2023 - Cursando)
+        </li>
+
+        <!-- Cursos -->
+        <li>
+            <strong>Cursos Complementares:</strong>
+            <ul>
+                <li>Desenvolvimento Web Front-End (HTML5, CSS3 e JavaScript) – Curso em Vídeo (40h)</li>
+                <li>Lógica de Programação com Python – Udemy (20h)</li>
+            </ul>
+        </li>
+
+        <!-- Idiomas -->
+        <li>
+            <strong>Idiomas:</strong>
+            <ul>
+                <li>Português – Nativo</li>
+                <li>Inglês – Intermediário (Leitura e escrita para documentação técnica)</li>
+            </ul>
+        </li>
+    </ul>
+
+</section>
+<section id="portfolio">
+
+    <h1>Portfólio</h1>
+
+    <!-- Projeto 1 -->
+    <article class="projeto">
+        <h2>Página de Captura (Landing Page)</h2>
+        <p>
+            Este foi o meu primeiro projeto prático! Desenvolvi uma página de vendas para um produto fictício, 
+            focando na estrutura correta do HTML e na estilização básica com CSS. Aprendi a alinhar elementos 
+            e a usar cores de forma harmônica.
+        </p>
+        <p>
+            <strong>O que pratiquei:</strong> Tags estruturais do HTML5, estilização com CSS3 e publicação de sites.
+        </p>
+        <a href="https://github.com/seu-usuario/landing-page-estudo" target="_blank">Ver código no GitHub</a>
+    </article>
+
+    <hr> <!-- Linha para separar os projetos -->
+
+    <!-- Projeto 2 -->
+    <article class="projeto">
+        <h2>Calculadora Digital Completa</h2>
+        <p>
+            Um projeto clássico de lógica de programação. Desenvolvi uma calculadora funcional onde apliquei 
+            meus primeiros blocos de código JavaScript para capturar os cliques nos botões e realizar as 
+            operações matemáticas básicas (soma, subtração, multiplicação e divisão).
+        </p>
+        <p>
+            <strong>O que pratiquei:</strong> Funções e eventos em JavaScript, manipulação de texto na tela e lógica básica.
+        </p>
+        <a href="https://github.com/seu-usuario/calculadora-javascript" target="_blank">Ver código no GitHub</a>
+    </article>
+
+</section>
+<!-- Seção Contato -->
+<section id="contato">
+
+    <h2>Contato</h2>
+
+    <form id="formContato">
+
+        <!-- Nome -->
+        <label for="nome">Nome:</label><br>
+        <input
+            type="text"
+            id="nome"
+            name="nome"
+            value="Priscila Batista da Silva"
+            readonly
+        ><br><br>
+
+        <!-- E-mail -->
+        <label for="email">E-mail:</label><br>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            value="priscilabatista92@outlook.com"
+            readonly
+        ><br><br>
+
+        <!-- Mensagem -->
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea
+            id="mensagem"
+            name="mensagem"
+            rows="6"
+            cols="40"
+            placeholder="Digite sua mensagem..."
+            required
+        ></textarea><br><br>
+
+        <!-- Botão -->
+        <button type="submit">Enviar</button>
+
+    </form>
+
+</section>
+
+<!-- JavaScript -->
+<script>
+const formulario = document.getElementById("formContato");
+
+formulario.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
+
+    const validarEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (nome === "" || email === "" || mensagem === "") {
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    if (!validarEmail.test(email)) {
+        alert("Digite um e-mail válido!");
+        return;
+    }
+
+    alert("Mensagem enviada com sucesso!");
+
+    // Limpa apenas a mensagem
+    document.getElementById("mensagem").value = "";
+
+});
+</script>
